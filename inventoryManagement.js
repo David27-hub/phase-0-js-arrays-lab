@@ -1,12 +1,30 @@
-// Write your code here
+// inventoryManagement.js
 
+// Products should be an array so tests can mutate it in-place.
+const products = ["Laptop", "Phone", "Headphones", "Monitor"];
 
+function logFirstProduct() {
+  console.log(products[0]);
+}
 
-// Export the necessary parts for testing
+function addProduct(product) {
+  products.push(product);
+}
+
+function updateProductName(index, name) {
+  products[index] = name;
+}
+
+function removeLastProduct() {
+  products.pop();
+}
+
+// Export the parts the tests expect
 module.exports = {
-  logFirstProduct: typeof logFirstProduct !== 'undefined' ? logFirstProduct : undefined,
-  addProduct: typeof addProduct !== 'undefined' ? addProduct : undefined,
-  updateProductName: typeof updateProductName !== 'undefined' ? updateProductName : undefined,
-  removeLastProduct: typeof removeLastProduct !== 'undefined' ? removeLastProduct : undefined,
-  products
+  products,
+  logFirstProduct,
+  addProduct,
+  updateProductName,
+  removeLastProduct
 };
+
